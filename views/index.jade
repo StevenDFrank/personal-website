@@ -1,0 +1,150 @@
+extends layout
+
+block pageHead
+
+block content
+
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+
+  div(class="image-container" id="imageContainer")
+    img(src="" class="slide-image" id="slideImage1" style="z-index: 2;")
+    img(src="" class="slide-image" id="slideImage2" style="z-index: 1;")
+
+  div(class="album-container" id="albumContainer")
+
+
+  script.
+    console.log('Local Script');
+
+    // ~~~~ FULL SCREEN SLIDE SHOW ~~~~
+    var image1 = document.getElementById("slideImage1");
+    var image2 = document.getElementById("slideImage2");
+
+    image1.onload = function () {
+      resizeBackground(image1);
+    };
+    image2.onload = function () {
+      resizeBackground(image2);
+    };
+    window.addEventListener('resize', function () {
+      resizeBackground(image1);
+      resizeBackground(image2);
+    });
+
+    // add last ele twice for recursive repeat and even num of images
+    var imageArr = ['jbackground.jpg', 'nodejs.png', 'norway.jpg', 'background-3.jpg', 'jbackground.jpg', 'jbackground.jpg'];
+
+    slideShow([image1, image2], imageArr);
+
+    function slideShow(imageContainers, images) {
+
+      imageContainers[0].style.zIndex = '2';
+      imageContainers[1].style.zIndex = '1';
+
+      imageContainers[0].src = "/images/" + images[0];
+      imageContainers[1].src = "/images/" + images[1];
+
+      var bool = true;
+      var time = 0;
+      var interval = 3000;
+
+      images.slice(2, images.count).forEach(function(image) {
+        time += interval;
+        if (bool === true) {
+          setTimeout(function () {
+            imageContainers[0].style.transition = 'all 1s ease-in-out';
+            imageContainers[0].style.opacity = '0';
+          }, time);
+          time += interval;
+          setTimeout(function () {
+            imageContainers[1].style.zIndex = '2'
+            imageContainers[0].style.transition = 'all 0s';
+            imageContainers[0].style.zIndex = '1';
+            imageContainers[0].style.opacity = '1';
+            imageContainers[0].src = "/images/" + image;
+          }, time);
+          bool = false;
+        } else {
+          setTimeout(function () {
+            imageContainers[1].style.transition = 'all 1s ease-in-out';
+            imageContainers[1].style.opacity = '0';
+          }, time);
+          time += interval;
+          setTimeout(function () {
+            imageContainers[0].style.zIndex = '2'
+            imageContainers[1].style.transition = 'all 0s';
+            imageContainers[1].style.zIndex = '1';
+            imageContainers[1].style.opacity = '1';
+            imageContainers[1].src = "/images/" + image;
+          }, time);
+          bool = true;
+        }
+      });
+      setTimeout(function () {
+        slideShow(imageContainers, images);
+      }, time);
+    }
+
+    function resizeBackground(image) {
+
+      var imageHeight = image.height;
+      var imageWidth = image.width;
+      let windowHeight = window.innerHeight;
+      let windowWidth = window.innerWidth;
+
+      if (imageWidth < windowWidth) {
+        image.style.width = '100vw';
+        image.style.height = 'auto';
+        imageHeight = image.height;
+        imageWidth = image.width;
+      } else if (imageHeight < windowHeight) {
+        image.style.width = 'auto';
+        image.style.height = '100vh';
+        imageHeight = image.height;
+        imageWidth = image.width;
+      }
+
+      if (imageWidth > windowWidth) {
+        let margin = -0.5 * (imageWidth - windowWidth);
+        image.style.marginLeft = margin + 'px';
+      } else {
+        image.style.marginLeft = '0';
+      }
+
+      if (imageHeight > windowHeight) {
+        let margin = -0.5 * (imageHeight - windowHeight);
+        image.style.marginTop = margin + 'px';
+      } else {
+        image.style.marginTop = '0';
+      }
+
+    }
+
+
+    // ~~~~ IMAGE ALBUMS ~~~~
+    function createAlbums() {
+      let albumInfo = [
+        {link: 'lit'},
+        {link: 'fire'},
+        {link: 'portfolio'}
+      ];
+
+      let albumContainer = document.getElementById("albumContainer");
+      var count = 1;
+
+      albumInfo.forEach(function (portfolio) {
+        var albumItem = document.createElement("div");
+        albumItem.className = "album-item";
+        albumItem.id = "albumItem" + count;
+        albumItem.onclick = function () {
+          window.location = '/gallery?gallery=' + portfolio.link;
+        };
+        albumContainer.appendChild(albumItem);
+        count++;
+      });
+    }
+    createAlbums();
+
+
+
+

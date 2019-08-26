@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Nunito:200,600')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Ubuntu&display=swap')
+
+  block pageHead
+
+
+  body
+    nav(class="nav" id="nav")
+      a(href="/" class="nav-title") Steve.dev
+
+    script.
+      // setup nav hover
+      var nav = document.getElementById('nav');
+
+      nav.onmouseover = function() {
+        nav.style.transition = 'all 0.5s ease-in-out';
+      };
+
+      window.addEventListener('resize', function () {
+        nav.style.transition = 'all 0s ease-in-out';
+
+      });
+
+
+
+
+
+
+  block content
+
+
+
+  block footer
+    footer(class="footer" id="footer")
