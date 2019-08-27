@@ -6,10 +6,33 @@ block content
 
   script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
 
-  div(style="height:100vh;width:100vw;background:green;padding:0;margin:0;position:absolute;")
-      p(style="height:100vh;width:100vw;font-size:50px;") #{gal}
+  div(class="image-gallery")
+    div(class="column" id="column1")
+    div(class="column" id="column2")
+    div(class="column" id="column3")
+    div(class="column" id="column4")
 
 
   script.
-    console.log('Local Script');
-    console.log('')
+    $.get("/get-images", function (images) {
+      populateImages(images);
+    });
+
+    function populateImages(images) {
+      var imageCount = 1;
+      var columnCount = 0;
+      var imageColumns = [
+        document.getElementById("column1"),
+        document.getElementById("column2"),
+        document.getElementById("column3"),
+        document.getElementById("column4")
+      ];
+      images.forEach(function(image) {
+        var newImage = document.createElement("img");
+        newImage.id = "galleryImage" + imageCount;
+        newImage.src = 'images/portfolio/' + image;
+        imageColumns[columnCount].appendChild(newImage);
+        if (columnCount < 3) {columnCount++;} else {columnCount = 0;}
+        imageCount++;
+      });
+    }

@@ -22,10 +22,36 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+
+app.get("/get-images", function(req, res) {
+  //requiring path and fs modules
+  const path = require('path');
+  const fs = require('fs');
+//joining path of directory
+  const directoryPath = path.join(__dirname, '/public/images/portfolio');
+//passsing directoryPath and callback function
+  fs.readdir(directoryPath, function (err, files) {
+    //handling error
+    if (err) {
+      return console.log('Unable to scan directory: ' + err);
+    }
+    res.send(files);
+
+    //listing all files using forEach
+    // files.forEach(function (file) {
+    //   // Do whatever you want to do with the file
+    //   // console.log(file);
+    //   files.push(file);
+    // });
+  });
+});
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {

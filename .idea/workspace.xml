@@ -1,7 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81ac0672-bffe-4983-b7eb-c85b168ea34e" name="Default Changelist" comment="" />
+    <list default="true" id="81ac0672-bffe-4983-b7eb-c85b168ea34e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_358.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_361.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_366.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_368.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_371.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_380.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_383.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_388.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_390.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_397.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_399.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_402.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_424.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_430 copy copy.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_430 copy.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_430.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_431.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_439.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_451.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_452.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_457.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_457c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_468.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_476.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_481.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_483.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_488.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_506.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_513.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_516.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_530.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_531.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_532.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_533.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_537.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_547.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_550.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_568.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/portfolio/2017_05_20_9999_582.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/gallery.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/gallery.jade" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.jade" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +58,7 @@
   </component>
   <component name="ProjectId" id="1PqnT5nhThJmFC7dF7qKJXa2tVL" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -23,6 +69,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images/portfolio" />
       <recent name="$PROJECT_DIR$/public/images" />
     </key>
   </component>
@@ -57,10 +104,22 @@
       <workItem from="1566660279637" duration="8525000" />
       <workItem from="1566686932473" duration="255000" />
       <workItem from="1566823875424" duration="274000" />
+      <workItem from="1566848945081" duration="7051000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
