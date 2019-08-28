@@ -5,12 +5,10 @@ block pageHead
 block content
 
   script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+  script(src="javascripts/load-image.all.min.js")
 
-  div(class="image-gallery")
-    div(class="column" id="column1")
-    div(class="column" id="column2")
-    div(class="column" id="column3")
-    div(class="column" id="column4")
+
+  div(class="image-gallery" id="gallery")
 
 
   script.
@@ -19,20 +17,31 @@ block content
     });
 
     function populateImages(images) {
+      let imgGallery = document.getElementById("gallery");
       var imageCount = 1;
-      var columnCount = 0;
-      var imageColumns = [
-        document.getElementById("column1"),
-        document.getElementById("column2"),
-        document.getElementById("column3"),
-        document.getElementById("column4")
-      ];
       images.forEach(function(image) {
         var newImage = document.createElement("img");
+        newImage.className = "gallery-image";
         newImage.id = "galleryImage" + imageCount;
-        newImage.src = 'images/portfolio/' + image;
-        imageColumns[columnCount].appendChild(newImage);
-        if (columnCount < 3) {columnCount++;} else {columnCount = 0;}
+        var imageUrl = 'images/portfolio/' + image;
+        loadImage(
+          imageUrl,
+          function (img, data) {
+            if (img.type === "error") {
+              console.error("Error loading image " + imageUrl);
+            } else {
+              // img.className("gallery-image")
+              // img.id = "galleryImage" + imageCount;
+              imgGallery.appendChild(img);
+              console.log("Original image width: ", data.originalWidth);
+              console.log("Original image height: ", data.originalHeight);
+            }
+          },
+          {
+            maxWidth: 600,
+            orientation: true
+          },
+        );
         imageCount++;
       });
     }
