@@ -11,4 +11,8 @@ router.get('/gallery', function(req, res) {
   res.render('gallery', { gal: gallery});
 });
 
+router.get('/gal', function(req, res) {
+    res.render('gal');
+});
+
 module.exports = router;

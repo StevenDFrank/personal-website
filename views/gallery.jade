@@ -5,7 +5,18 @@ block pageHead
 block content
 
   script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+
+  // Load Image auto crop/rotate, https://github.com/blueimp/JavaScript-Load-Image
   script(src="javascripts/load-image.all.min.js")
+
+
+  // PhotoSwipe Full Screen Image Viewer
+  link(rel='stylesheet', href='/stylesheets/photoswipe.css')
+  link(rel='stylesheet', href='/stylesheets/default-skin.css')
+  script(src="javascripts/photoswipe.min.js")
+  script(src="javascripts/photoswipe-ui-default.min.js")
+
+
 
 
   div(class="image-gallery" id="gallery")
@@ -17,6 +28,10 @@ block content
     });
 
     function populateImages(images) {
+      let hiddenGal = document.createElement("div");
+      hiddenGal.style.display = 'none';
+      document.body.appendChild(hiddenGal);
+
       let imgGallery = document.getElementById("gallery");
       var imageCount = 1;
       images.forEach(function(image) {
@@ -24,24 +39,32 @@ block content
         newImage.className = "gallery-image";
         newImage.id = "galleryImage" + imageCount;
         var imageUrl = 'images/portfolio/' + image;
-        loadImage(
-          imageUrl,
-          function (img, data) {
-            if (img.type === "error") {
-              console.error("Error loading image " + imageUrl);
-            } else {
-              // img.className("gallery-image")
-              // img.id = "galleryImage" + imageCount;
-              imgGallery.appendChild(img);
-              console.log("Original image width: ", data.originalWidth);
-              console.log("Original image height: ", data.originalHeight);
-            }
-          },
-          {
-            maxWidth: 600,
-            orientation: true
-          },
-        );
+        newImage.src = imageUrl;
+        // newImage.setAttribute("style", "transform: rotate(" + "90" + "deg)");
+        // newImage.padding = '400px';
+        imgGallery.appendChild(newImage);
+
+        // newImage.style.height = "18vw";
+        // newImage.style.width = "auto";
+
+        // loadImage(
+        //   imageUrl,
+        //   function (img, data) {
+        //     if (img.type === "error") {
+        //       console.error("Error loading image " + imageUrl);
+        //     } else {
+        //       // img.className("gallery-image")
+        //       // img.id = "galleryImage" + imageCount;
+        //       imgGallery.appendChild(img);
+        //       console.log("Original image width: ", data.originalWidth);
+        //       console.log("Original image height: ", data.originalHeight);
+        //     }
+        //   },
+        //   {
+        //     maxWidth: 4000,
+        //     orientation: true,
+        //   },
+        // );
         imageCount++;
       });
     }

@@ -1,0 +1,55 @@
+extends layout
+
+block pageHead
+
+block content
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+
+    // Load Image auto crop/rotate, https://github.com/blueimp/JavaScript-Load-Image
+    script(src="javascripts/load-image.all.min.js")
+
+
+    // PhotoSwipe Full Screen Image Viewer
+    link(rel='stylesheet', href='/stylesheets/photoswipe.css')
+    link(rel='stylesheet', href='/stylesheets/default-skin.css')
+    script(src="javascripts/photoswipe.min.js")
+    script(src="javascripts/photoswipe-ui-default.min.js")
+
+
+
+
+    div(class="image-grid" id="grid")
+        div(class="grid-image" style="height: 500px; background: blue;")
+        div(class="grid-image")
+        div(class="grid-image")
+        div(class="grid-image")
+        div(class="grid-image")
+        div(class="grid-image")
+        div(class="grid-image")
+
+
+    script.
+        $.get("/get-images", function (images) {
+            // populateImages(images);
+        });
+
+        function populateImages(images) {
+            let hiddenGal = document.createElement("div");
+            hiddenGal.style.display = 'none';
+            document.body.appendChild(hiddenGal);
+
+            let imgGallery = document.getElementById("gallery");
+            var imageCount = 1;
+            images.forEach(function(image) {
+                var newImage = document.createElement("img");
+                newImage.className = "gallery-image";
+                newImage.id = "galleryImage" + imageCount;
+                var imageUrl = 'images/portfolio/' + image;
+                newImage.src = imageUrl;
+                // newImage.setAttribute("style", "transform: rotate(" + "90" + "deg)");
+                // newImage.padding = '400px';
+                // imgGallery.appendChild(newImage);
+                imageCount++;
+            });
+        }
